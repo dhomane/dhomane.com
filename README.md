@@ -1,7 +1,6 @@
 # My Professional Portfolio - dhomane.com
 
-<h1 align="center">Hello there! 👋, I am Omkar Dhomane</h1>
-<h3 align="center">This is my Professional Portfolio Website which contains information about my background, skills, experience and some of my interesting projects. If you share the same passion for technology as I do, Let us connect!</h3>
+
 
 
 - 👨‍💻 All of my projects are available at [https://github.com/dhomane](https://github.com/dhomane)
