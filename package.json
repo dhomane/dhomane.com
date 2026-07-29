@@ -1,0 +1,7 @@
+{
+  "name": "dhomane-portfolio",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  }
+}
