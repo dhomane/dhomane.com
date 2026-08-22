@@ -540,6 +540,18 @@ section {
   z-index: 1;
 }
 
+.portfolio .portfolio-caption {
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  color: #272829;
+  background: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .portfolio .portfolio-wrap img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
