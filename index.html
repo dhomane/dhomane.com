@@ -674,7 +674,11 @@
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
 
 
-            <form action="https://formspree.io/f/xlezegbg" method="post" role="form" class="php-email-form">
+            <form action="https://formsubmit.co/omkardhomane@gmail.com" method="post" role="form" class="php-email-form" id="contact-form">
+              <input type="hidden" name="_subject" value="New message from dhomane.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -699,18 +703,57 @@
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>
-               
-                
+                <div class="error-message"></div>
               </div>
-                            <div class="text-center"> 
+                            <div class="text-center">
 
                                 <input type="submit" value="Send Message">
 <div class="sent-message">Your message has been sent. Thank you!</div>
-                              
+
 
                             </div>
 
             </form>
+            <script>
+            (function () {
+              var form = document.getElementById('contact-form');
+              if (!form) return;
+              // Capture-phase listener runs before the template's jQuery handler
+              // (which expects a literal "OK" response body and breaks with any
+              // JSON-based form backend) and stops it from also firing.
+              form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var loading = form.querySelector('.loading');
+                var sent = form.querySelector('.sent-message');
+                var error = form.querySelector('.error-message');
+                if (error) { error.style.display = 'none'; error.innerHTML = ''; }
+                if (sent) sent.style.display = 'none';
+                if (loading) loading.style.display = 'block';
+                fetch('https://formsubmit.co/ajax/omkardhomane@gmail.com', {
+                  method: 'POST',
+                  headers: { Accept: 'application/json' },
+                  body: new FormData(form)
+                })
+                  .then(function (r) {
+                    if (!r.ok) throw new Error('bad status');
+                    return r.json();
+                  })
+                  .then(function () {
+                    if (loading) loading.style.display = 'none';
+                    if (sent) sent.style.display = 'block';
+                    form.reset();
+                  })
+                  .catch(function () {
+                    if (loading) loading.style.display = 'none';
+                    if (error) {
+                      error.style.display = 'block';
+                      error.innerHTML = 'Something went wrong — email me directly at omkardhomane@gmail.com instead.';
+                    }
+                  });
+              }, true);
+            })();
+            </script>
           </div>
 
         </div>
