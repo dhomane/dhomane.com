@@ -689,9 +689,17 @@ section {
 /* Certifications — categorized by vendor */
 .cert-category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  .cert-category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 575px) {
+  .cert-category-grid { grid-template-columns: 1fr; }
 }
 
 .cert-category {
