@@ -1246,3 +1246,15 @@ section {
   margin-left: 6px;
   color: #149ddd;
 }
+
+/* ===================================================================
+   Global font uniformity: DM Sans, Medium (500) everywhere.
+   Hierarchy comes from size/color, not weight — matches the Stripe
+   design tokens used across Resume/Certifications/Projects.
+   Icon glyph fonts (<i> tags: icofont/boxicons/font-awesome) excluded.
+   =================================================================== */
+body, h1, h2, h3, h4, h5, h6, p, a, li, span, div, label,
+input, textarea, button, small {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 500 !important;
+}
